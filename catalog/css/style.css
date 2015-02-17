@@ -1,0 +1,507 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+body{
+    font-size:16px;
+    text-transform:uppercase;
+    font-family:"PT Sans Narrow", sans-serif;
+}
+header{
+    background-color: black;
+    color:white;
+}
+header a:link,
+header a:visited,
+header a:hover,
+header a:active{
+    color:white;
+}
+a{
+    text-decoration:none;
+}
+header a:hover,
+header a:active{
+    background-color: #242424;
+}
+.layout-center-wrapper{
+    width:940px;
+    padding:0;
+    margin:0 auto;
+}
+header:after{
+    content:'';
+    display:table;
+    clear:both;
+}
+header nav{
+    float: left;
+    font-size: 0;
+}
+nav a{
+    display: inline-block;
+    margin: 0;
+    padding-top:14px;
+    padding-bottom:14px;
+    padding-left:21px;
+    padding-right:21px;
+    font-size: 16px;
+    line-height: 42px;
+    border-bottom: 4px solid transparent;
+}
+.account-menu{
+    position:relative;
+    float: right;
+    display: block;
+    max-width: 160px;
+    margin: 0px;
+    padding: 14px 20px 14px 55px;
+    line-height: 42px;
+    border-bottom: 4px solid transparent;
+}
+.account-menu:before{
+    content:'';
+    position:absolute;
+    top: 27px;
+    left: 25px;
+    width: 19px;
+    height: 17px;
+    background:url("../img/sprite.png") no-repeat -144px -51px;
+}
+.account-menu-active:before{
+    opacity: 0.3;
+}
+header a:hover,
+header a:active{
+    background:#242424;
+    border-bottom: 4px solid #ffffff;
+}
+header a.active{
+    margin: 0 21px;
+    padding: 14px 0 14px;
+    border-bottom: 4px solid white;
+}
+header a.active:hover,
+header a.active:active{
+    background:black;
+}
+main{
+	background: url("../pic/bg_main.jpg") repeat 0 0;
+	padding-top: 31px;
+}
+.login-popup{
+    display: none;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    width: 297px;
+    min-height: 200px;
+    padding: 47px 82px;
+    margin-left: -230px;
+    background: #ffffff;
+    z-index: 10;
+}
+@-webkit-keyframes login-open {
+    0%   { -webkit-transform: translateY(-2000px); }
+    70%  { -webkit-transform: translateY(30px);    }
+    90%  { -webkit-transform: translateY(-10px);   }
+    100% { -webkit-transform: translateY(0);       }
+}
+@keyframes login-open {
+    0%   { transform: translateY(-2000px); }
+    70%  { transform: translateY(30px);    }
+    90%  { transform: translateY(-10px);   }
+    100% { transform: translateY(0);       }
+}
+@-webkit-keyframes login-error {
+    0%, 100%                { -webkit-transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); }
+    20%, 40%, 60%, 80%      { -webkit-transform: translateX(10px); }
+}
+@keyframes login-error {
+    0%, 100%                { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80%      { transform: translateX(10px); }
+}
+.login-popup-show {
+    display: block;
+    -webkit-animation: login-open 0.4s;
+    animation: login-open 0.4s;
+}
+.login-popup-error {
+    -webkit-animation: login-error 0.6s;
+    animation: login-error 0.6s;
+}
+.login-popup-close{
+    position: absolute;
+    display: block;
+    left: 110%;
+    top:13%;
+    width:21px;
+    height: 21px;
+    background: url("../img/sprite.png") no-repeat -123px -10px;
+    z-index: 20;
+}
+.login-popup .title{
+    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 42,3px;
+}
+.login-popup p{
+    font-size: 14px;
+    line-height: 24px;
+    margin:0;
+}
+.login-form{
+    margin-left:-2px;
+    margin-top:26px;
+}
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus,
+#orderform input[type="text"]:focus{
+    border:2px solid #7d5c3c;
+}
+input[type="submit"]:hover,
+input[type="checkbox"]{
+    cursor: pointer;
+}
+.login-form label:hover,
+.login-form label:active{
+    cursor: pointer;
+    color: #663d15;
+}
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="submit"]{
+    display:block;
+    font-weight:bold;
+    font-family:"PT Sans Narrow", sans-serif;
+    text-transform:uppercase;
+}
+.login-form input[type="text"],
+.login-form input[type="password"]{
+    width:241px;
+    margin-bottom:8px;
+    padding-top:11px;
+    padding-bottom:11px;
+    padding-left:16px;
+    padding-right:40px;
+    border:2px solid #000000;
+    color:#000000;
+    background-color:#f9f6f3;
+}
+.login-form input[type="password"]{
+    margin-bottom:13px;
+}
+.login-form .login-field{
+    background:url('../img/form_icon_user.png') no-repeat 268px 15px;
+}
+.login-form .password-field{
+    background:url('../img/form_icon_locked.png') no-repeat 268px 11px;
+}
+.login-form .restore{
+    float:right;
+}
+.login-form label{
+    font-size: 14px;
+    line-height: 24px;
+}
+.login-form input[type="checkbox"]{
+    margin-right:12px;
+    font-size: 14px
+    vertical-align:middle;
+}
+.login-form a{
+    font-size: 14px;
+    line-height: 24px;
+    color:#000000;
+    text-decoration:underline;
+}
+.login-form input[type="submit"]{
+    width:300px;
+    border:none;
+    margin-top:14px;
+    margin-bottom:15px;
+    background:#000000;
+    padding-top:10px;
+    padding-bottom:11px;
+    padding-left:0;
+    color:#ffffff;
+    font-size: 14px;
+    line-height: 24px;
+}
+h1{
+	font-size: 30px;
+    line-height: 42px;
+	margin-bottom:0;
+}
+.title-info{
+	margin-top:15px;
+	margin-left: 3px;
+	font-size: 14px;
+    line-height: 20px;
+}
+.title-info a{
+	position:relative;
+	margin-right: 40px;
+	color: black;
+}
+.title-info a:after{
+	content:'';
+	position:absolute;
+	top:3px;
+	right: -26px;
+	width:13px;
+	height:13px;
+	background:url("../img/icon_shape_black.png") no-repeat 0 0;
+}
+.title-info .shop{
+	margin-right: 44px;
+}
+.title-info a.shop:after{
+	right: -29px;
+}
+.main-filter{
+	display: inline-block;
+	float: left;
+	margin-right: 60px;
+	width: 180px;
+}
+main .title{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size:24px;
+    text-transform:uppercase;
+}
+.page-content{
+	display: block;
+	margin-top:48px;
+	margin-bottom:0;
+}
+input[type="checkbox"]{
+	position:absolute;
+	top:10px;
+	left:-44px;
+}
+form{
+	margin-top:20px;
+	padding:0;
+}
+form label{
+	position:relative;
+	display: block;
+	cursor: pointer;
+	margin-left:43px;
+	font-size:14px;
+	line-height: 24px;
+    text-transform:uppercase;
+}
+form label:hover{
+	color: #724d2c;
+}
+form label.locked{
+	color: #cfccca;
+}
+.main-filter .producer label{
+	padding-top:7px;
+	padding-bottom:7px;
+}
+.main-filter .groups{
+	margin-top:35px;
+}
+.main-filter .groups label{
+	padding-top:9px;
+	padding-bottom:9px;
+	font-size:14px;
+	line-height: 19px;
+}
+input[type="radio"]{
+	position:absolute;
+	top:9px;
+	left:-44px;
+}
+.main-contant{
+	float: left;
+	margin-top:10px;
+	width: 700px;
+}
+.main-contant img{
+	width:220px;
+	height:165px;
+}
+.products{
+	float: left;
+	width: 220px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	vertical-align: top;
+	font-size: 0;
+	background:white;
+	-webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+			box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+.products .buy:hover,
+.products .buy:active{
+	background: #663d15;
+}
+.products .name{
+	margin-top:12px;
+	margin-left: 15px;
+	margin-bottom:0;
+	font-size: 14px;
+	line-height: 18px;
+}
+.products .info{
+	margin-top:0;
+	margin-left: 15px;
+	margin-bottom:10px;
+	font-size: 14px;
+	line-height: 18px;
+	text-transform: none;
+}
+.products:nth-child(3n){
+	margin-right: 0px;
+}
+.products .btn{
+	display: block;
+	margin: 15px auto;
+	font-size: 0;
+	text-align: center;
+}
+.products .price{
+	box-sizing:border-box;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-left:30px;
+	padding-right:24px;
+	min-width:110px;
+	color:black;
+	font-size: 14px;
+	line-height: 18px;
+	background:#e5e5e5;
+}
+.products .buy{
+	box-sizing:border-box;
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-left:17px;
+	padding-right:15px;
+	margin-right:1px;
+	min-width:80px;
+	font-size: 14px;
+	line-height: 18px;
+	color:white;
+	background:black;
+}
+.products .btn div{
+	display: inline-block;
+}
+nav.main-pagi{
+	margin: 25px 0 45px 240px;
+}
+.main-pagi a{
+	float:left;
+	display: block;
+	box-sizing:border-box;
+	width:43px;
+	min-height:44px;
+	padding-top:13px;
+	padding-left:18px;
+    margin-right:7px;
+    text-align:center;
+    font-size:14px;
+	line-height: 14px;
+    color: white;
+    background: black;
+}
+.main-pagi a:hover,
+.main-pagi a:active{
+	background: #663d15;
+}
+.main-pagi .selected{
+	color: black;
+    background: white;
+}
+.main-pagi .selected:hover,
+.main-pagi .selected:active{
+	color: black;
+    background: white;
+}
+.clearfix:after{
+    content:'';
+    display:table;
+    clear:both;
+}
+footer{
+    color: white;
+    font-size: 14px;
+    line-height: 24px;
+    background: url("../pic/bg_footer.jpg") repeat 0 0;
+}
+.contacts-address,
+.social-buttons{
+    float: left;
+    margin: 56px 153px 30px 0;
+}
+footer .design{
+    float: right;
+    margin-top: 42px;
+}
+.social-buttons .title{
+    text-align:center;
+    margin-left:-2px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.social-buttons a{
+    display: inline-block;
+    background: black;
+    height:25px;
+    width: 25px;
+    padding: 9px;
+    margin-top:3px;
+    margin-right:3px;
+}
+.social-buttons .vk{
+    background:#000000 url("../img/sprite.png") no-repeat -2px -130px;
+}
+.social-buttons .vk:hover,
+.social-buttons .vk:active{
+    background:#ffffff url("../img/sprite.png") no-repeat -47px -130px;
+}
+.social-buttons .fb{
+    background:#000000 url("../img/sprite.png") no-repeat -66px -42px;
+}
+.social-buttons .fb:hover,
+.social-buttons .fb:active{
+    background:#ffffff url("../img/sprite.png") no-repeat -98px -42px;
+}
+.social-buttons .inst{
+    background:#000000 url("../img/sprite.png") no-repeat 0px -83px;
+}
+.social-buttons .inst:hover,
+.social-buttons .inst:active{
+    background:#ffffff url("../img/sprite.png") no-repeat -41px -83px;
+}
+footer .design p{
+    font-size: 14px;
+    line-height: 24px;
+    margin-left:3px;
+	margin-bottom:12px;
+    text-align:center;
+}
+footer .design a{
+    padding-top: 12px;
+    padding-bottom:12px;
+    padding-right:27px;
+    padding-left:30px;
+    background: black;
+    color: white;
+    text-decoration: none;
+}
+footer .design a:hover,
+footer .design a:active{
+	color:black;
+	background:white;
+}
