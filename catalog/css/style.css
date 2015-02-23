@@ -371,26 +371,24 @@ input[type="radio"]{
 }
 .products .price{
 	box-sizing:border-box;
-	padding-top:12px;
-	padding-bottom:12px;
+    display: inline-block;
 	padding-left:30px;
 	padding-right:24px;
 	min-width:110px;
 	color:black;
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 42px;
 	background:#e5e5e5;
 }
 .products .buy{
 	box-sizing:border-box;
-	padding-top:12px;
-	padding-bottom:12px;
+    display: inline-block;
 	padding-left:17px;
 	padding-right:15px;
 	margin-right:1px;
 	min-width:80px;
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 42px;
 	color:white;
 	background:black;
 }
