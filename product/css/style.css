@@ -87,6 +87,26 @@ main{
 	background: url("../pic/bg_main.jpg") repeat 0 0;
 	padding-top: 31px;
 }
+label {
+    position: relative;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+form input[type="checkbox"] + label::before {
+    position: absolute;
+    content: " ";
+    left: -30px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: url("../../img/input/checkbox.png") no-repeat 0 0;
+}
+#remember:checked ~ label::before {
+    background: url("../../img/input/checkbox-check.png") no-repeat 0 0;
+}
+
 .login-popup{
     display: none;
     position: absolute;
@@ -201,6 +221,7 @@ input[type="checkbox"]{
     float:right;
 }
 .login-form label{
+    margin-left: 30px;
     font-size: 14px;
     line-height: 24px;
 }

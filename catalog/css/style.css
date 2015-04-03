@@ -5,7 +5,7 @@ html,body{
 body{
     font-size:16px;
     text-transform:uppercase;
-    font-family:"PT Sans Narrow", sans-serif;
+    font-family:"PT Sans Narrow", sans-serif;F
 }
 header{
     background-color: black;
@@ -208,7 +208,7 @@ input[type="checkbox"]{
 }
 .login-form input[type="checkbox"]{
     margin-right:12px;
-    font-size: 14px
+    font-size: 14px;
     vertical-align:middle;
 }
 .login-form a{
@@ -302,6 +302,57 @@ form label:hover{
 form label.locked{
 	color: #cfccca;
 }
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    position: relative;
+}
+
+form input[type="checkbox"] + label::before,
+form input[type="radio"] + label::before {
+    position: absolute;
+    content: " ";
+    left: -30px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+form input[type="checkbox"] + label::before {
+    background: url("../../img/input/checkbox.png") no-repeat 0 0;
+}
+
+form input[type="checkbox"] + label[for="remember"]::before {
+    left: -43px;
+    top: 0;
+}
+
+#check-1:checked ~ label[for="check-1"]::before,
+#check-2:checked ~ label[for="check-2"]::before,
+#check-3:checked ~ label[for="check-3"]::before,
+#check-4:checked ~ label[for="check-4"]::before,
+#check-5:checked ~ label[for="check-5"]::before,
+#check-6:checked ~ label[for="check-6"]::before,
+#remember:checked ~ label::before {
+    background: url("../../img/input/checkbox-check.png") no-repeat 0 0;
+}
+
+#radio-1 ~ label[for="radio-1"]::before,
+#radio-2 ~ label[for="radio-2"]::before,
+#radio-3 ~ label[for="radio-3"]::before  {
+    background: url("../../img/input/radio.png") no-repeat 0 0;
+}
+
+#radio-1:checked ~ label[for="radio-1"]::before,
+#radio-2:checked ~ label[for="radio-2"]::before,
+#radio-3:checked ~ label[for="radio-3"]::before {
+    background: url("../../img/input/radio-check.png") no-repeat 0 0;
+}
+
 .main-filter .producer label{
 	padding-top:7px;
 	padding-bottom:7px;
@@ -314,11 +365,6 @@ form label.locked{
 	padding-bottom:9px;
 	font-size:14px;
 	line-height: 19px;
-}
-input[type="radio"]{
-	position:absolute;
-	top:9px;
-	left:-44px;
 }
 .main-contant{
 	float: left;
